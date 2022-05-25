@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名
+Viewing Diary
 
-Things you may want to cover:
+## アプリケーション概要
+自分が鑑賞した映画、ミュージカル、美術館・読んだ本・旅行などの内容や感想を記録することができる。
 
-* Ruby version
+## URL
+https://viewing-diary.herokuapp.com/
 
-* System dependencies
+## テスト用アカウント ※後から記載する
+ログイン機能等を実装した場合は、ログインに必要な情報を記載。またBasic認証等を設けている場合は、そのID/Passも記載すること。
 
-* Configuration
+## 利用方法　　※後で訂正する
+* トップページの投稿ボタンから鑑賞したり、読んだりした作品を投稿する。
+* おすすめされた作品をおすすめリストにメモできる。
 
-* Database creation
+## アプリケーションを作成した背景
+私自身が、映画を見たり本を読んだりすることが趣味であるが、せっかくみた作品の内容を忘れてしまうため、勿体無いと感じていた。それを記録できるアプリを探したが、映画のみ・本のみの記録アプリはあるが、全部を一つで管理できるアプリが少なかった。それに、たくさんの機能がついているため（アプリ内でのユーザー同士がシェアする機能など）、もっとシンプルに扱えるアプリが良いと思っていた。
 
-* Database initialization
+## 洗い出した要件
+[要件定義をまとめたシート](https://docs.google.com/spreadsheets/d/1oAsrCfc5SafZV1x2eWmxeaelYuuJp70ixFnayt3zNPU/edit?usp=sharing)
 
-* How to run the test suite
+## 実装した機能についての画像やGIFおよびその説明 ※後で記載する
+※	実装した機能について、それぞれどのような特徴があるのかを列挙する形で記載。画像はGyazoで、GIFはGyazoGIFで撮影すること。
 
-* Services (job queues, cache servers, search engines, etc.)
+## 実装予定の機能　※後で記載する
+洗い出した要件の中から、今後実装予定の機能がある場合は、その機能を記載。
 
-* Deployment instructions
+## データベース設計　※後で記載
+ER図を添付。
 
-* ...
+## 画面遷移図　※後で記載
+画面遷移図を添付。
+
+## 開発環境　※後で記載
+使用した言語・サービスを記載。
+
+## ローカルでの動作方法　※後で記載
+※	git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記載。
+
+## 工夫したポイント ※後で記載
