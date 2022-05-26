@@ -4,7 +4,7 @@
 Viewing Diary
 
 ## アプリケーション概要
-自分が鑑賞した映画、ミュージカル、美術館・読んだ本・旅行などの内容や感想を記録することができる。
+自分が鑑賞した映画、ミュージカル、美術館・読んだ本などの内容や感想を記録することができる。
 
 ## URL
 https://viewing-diary.herokuapp.com/
@@ -28,11 +28,10 @@ https://viewing-diary.herokuapp.com/
 ## 実装予定の機能　※後で記載する
 洗い出した要件の中から、今後実装予定の機能がある場合は、その機能を記載。
 
-## データベース設計　※後で記載
-ER図を添付。
-
-## 画面遷移図　※後で記載
-画面遷移図を添付。
+## データベース設計　
+[![Image from Gyazo](https://i.gyazo.com/45bae6e799c3d62fd1b10c92b861fb12.png)](https://gyazo.com/45bae6e799c3d62fd1b10c92b861fb12)
+## 画面遷移図　
+[![Image from Gyazo](https://i.gyazo.com/87006dc078f186bedf8ebcf5ef820267.png)](https://gyazo.com/87006dc078f186bedf8ebcf5ef820267)
 
 ## 開発環境　※後で記載
 使用した言語・サービスを記載。
