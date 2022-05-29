@@ -1,1 +1,27 @@
-トップ
+<div class="layout-wrapper">
+  <header class="header">
+      <div class="heading">
+        <%= link_to 'VIEWING DIARY', "/", class:"apptitle" %>
+      </div>
+      <div class="navbar">
+          <%= link_to 'LIST VIEW',"#",class:"nav-list" %>
+          <%= link_to 'RECOMMENDED',"#",class:"nav-recommended" %>
+      </div>
+   </header>
+
+    <!-- トップページのメイン -->
+    <div class="index-main">
+      <div class="post">
+        <%= image_tag"top.JPG", class:"main-image" %>
+        <div class="post-btn">
+          <%= link_to 'NEW POST',"#" %>
+          <%# <%= link_to image_tag("new-post", class:"post-image"),"#" %> 
+        </div>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="copyright">Copyright©️2022 VIEWING DIARY</div>
+    </footer>
+</div>
