@@ -1,0 +1,80 @@
+<div class="layout-wrapper">
+  <!-- ヘッダー -->
+  <header class="header">
+      <div class="heading">
+        <%= link_to 'VIEWING DIARY', "/", class:"apptitle" %>
+      </div>
+  </header>
+
+  <div class="new-image-content" >
+  <div class="new-main">
+    <h2 class="new-title">作品の情報を入力</h2>
+    <%= form_with local: true do |f| %>
+    <%# model: @item, %>
+
+    <%# <%= render 'shared/error_messages', model: f.object %> 
+
+    <%# 画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        画像
+      </div>
+      <div class="click-upload">
+          クリックしてファイルをアップロード
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /画像 %>
+    <%# 作品詳細 %>
+    <div class="new-items">
+      <div class="form">
+        <div>
+          <div class="weight-bold-text">
+          日付
+          <span class="indispensable">必須</span>
+          </div>
+          <div class="day"><input type="date"></input></div>
+        </div>
+        <div>
+          <div class="weight-bold-text">
+            カテゴリー
+            <span class="indispensable">必須</span>
+          </div>
+          <%# <%= f.collection_select(:item_category_id, ItemCategory.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %> 
+        </div>
+        <div>
+          <div class="weight-bold-text">
+            お気に入り度
+            <span class="indispensable">必須</span>
+          </div>
+          <%# <%= f.collection_select(:item_status_id, ItemStatus.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %> 
+        </div>
+      </div>
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"作品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          メモ
+        </div>
+        <%= f.text_area :item_info, class:"items-text", id:"item-info", placeholder:"感想など（1,000文字まで）" ,rows:"3" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /作品詳細 %>
+
+    <%# 下部ボタン %>
+    <div class="post-btn-contents"> 
+      <%= f.submit "POST" ,class:"post-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+    <% end %>
+ </div>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="copyright">Copyright©️2022 VIEWING DIARY</div>
+  </footer>
+</div>
