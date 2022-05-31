@@ -1,1 +1,14 @@
-トップ
+<%= render "shared/header" %>
+
+    <!-- トップページのメイン -->
+  <div class="index-main">
+    <div class="post">
+      <%= image_tag"top.JPG", class:"main-image" %>
+      <div class="new-post-btn">
+        <%= link_to 'NEW POST',new_work_path %>
+        <%# <%= link_to image_tag("new-post", class:"post-image"),"#" %> 
+      </div>
+    </div>
+  </div>
+
+<%= render "shared/footer" %>
