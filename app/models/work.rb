@@ -4,9 +4,8 @@ class Work < ApplicationRecord
 
   has_one_attached :image
 
-  validates :title, :day, presence: true
+  validates :title, :day, :category_id, :star_id, presence: true
   validates :title, length: { maximum: 40 }
   validates :memo, length: { maximum: 1000 }
-  validates :category_id, :star_id, numericality: { other_than: 1, message: 'を選択してください'} 
 
 end
