@@ -16,6 +16,10 @@ class WorksController < ApplicationController
     end
   end
 
+  def search
+    @works = Work.all
+  end
+
   private
 
   def work_params
