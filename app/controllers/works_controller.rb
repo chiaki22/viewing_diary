@@ -17,7 +17,12 @@ class WorksController < ApplicationController
   end
 
   def search
-    @works = Work.all
+    if params[:q]&.dig(:title)
+      squished_keywords = params[:q][:title].squish
+      params[:q][:title_cont_any] = squished_keywords.split(" ")
+    end
+    @q = Work.ransack(params[:q])
+    @works = @q.result
   end
 
   private
