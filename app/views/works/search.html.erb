@@ -1,5 +1,33 @@
 <%= render "shared/header" %>
 
+  <%= search_form_for @q, url: search_works_path do |f| %>
+<div class="work-contents">
+    <div class="work-contents-search">
+      <div class="search-field">
+        <%= f.label :title, 'タイトル' %>
+        <br>
+        <%= f.text_field :title, placeholder: 'タイトル', value: params[:q]&.dig(:title) %>
+      </div>
+      <div class="search-field">
+        <%= f.label :day_gteq, '日付'%>
+        <br>
+        <%= f.date_field :day_gteq %>〜<%= f.date_field :day_lteq %> 
+      </div>
+      <div class="search-field">
+        <%= f.label :star_id_in, 'お気に入り' %>
+        <br>
+        <%= f.collection_check_boxes(:star_id_in, Star.all, :id, :name, {include_blank: "---"}) %>
+      </div>
+    </div>
+      <div class="search-field-category">
+        <%= f.label :category_id_in, 'カテゴリー' %>
+        <br>
+        <%= f.collection_check_boxes(:category_id_in, Category.all, :id, :name, {include_blank: "---"}) %>
+        <%= f.submit '検索', class:"submit" %>
+      </div>
+</div>
+  <% end %>
+
 <div class="card__wrapper">
   <% @works.each do |work| %>
   <div class="card">
