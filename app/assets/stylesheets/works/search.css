@@ -1,0 +1,51 @@
+/* メイン */
+.work-contents{
+  font-family: 'Kalam', cursive;
+  font-family: 'Kalam', cursive;
+}
+.work-contents-search {
+  display: flex;
+  margin: 30px 20px 5px;
+  justify-content: space-between
+}
+.search-size {
+  font-size: 20px;
+  font-weight: bold;
+}
+.search-field-category {
+  margin: 0 20px 30px;
+}
+.btn-outline-secondary{
+  margin-left: 80px;
+}
+.card__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: calc(100% / 5);
+  margin-bottom:30px;
+  text-align: center;
+}
+.image__wrapper img{
+  object-fit: cover;
+  height: 270px;
+  width: 180px;
+}
+.card__img {
+  margin-bottom: 16px;
+  transition-duration:  .4s;
+}
+.card__img:hover{
+  transform: scale(1.1);
+}
+.card__title {
+  font-size: 20px;
+}
+.card__body a{
+  text-decoration: none;
+  color: black;
+}
+.card__summary {
+  font-size: 16px;
+}
