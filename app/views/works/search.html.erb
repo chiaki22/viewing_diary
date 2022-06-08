@@ -4,40 +4,38 @@
 <div class="work-contents">
     <div class="work-contents-search">
       <div class="search-field">
-        <%= f.label :title, 'タイトル' %>
+        <%= f.label :title, 'Title', class: "search-size" %>
         <br>
-        <%= f.text_field :title, placeholder: 'タイトル', value: params[:q]&.dig(:title) %>
+        <%= f.text_field :title, placeholder: 'Title', value: params[:q]&.dig(:title) %>
       </div>
       <div class="search-field">
-        <%= f.label :day_gteq, '日付'%>
+        <%= f.label :day_gteq, 'Day', class: "search-size"%>
         <br>
         <%= f.date_field :day_gteq %>〜<%= f.date_field :day_lteq %> 
       </div>
       <div class="search-field">
-        <%= f.label :star_id_in, 'お気に入り' %>
+        <%= f.label :star_id_in, 'Star', class: "search-size" %>
         <br>
         <%= f.collection_check_boxes(:star_id_in, Star.all, :id, :name, {include_blank: "---"}) %>
       </div>
     </div>
       <div class="search-field-category">
-        <%= f.label :category_id_in, 'カテゴリー' %>
+        <%= f.label :category_id_in, 'Category', class: "search-size" %>
         <br>
         <%= f.collection_check_boxes(:category_id_in, Category.all, :id, :name, {include_blank: "---"}) %>
-        <%= f.submit '検索', class:"submit" %>
+        <%= f.submit 'Search', class:"btn btn-outline-secondary" %>
       </div>
 </div>
   <% end %>
 
 <div class="card__wrapper">
   <% @works.each do |work| %>
-  <div class="card">
+  <div class="card border-0">
     <div class="image__wrapper" >
-    <%= link_to image_tag(work.image, class: :card__img ), "#" %>
-    <%# (work.id) %>
+    <%= link_to image_tag(work.image, class: :card__img ), work_path(work.id) %>
     </div>
     <div class="card__body">
-    <%= link_to work.title, "#", class: :card__title%>
-    <%# (work.id) %>
+    <%= link_to work.title, work_path(work.id), class: :card__title%>
     </div>
     <div class="card__summary">
     <%= Category.find(work.category_id).name %>

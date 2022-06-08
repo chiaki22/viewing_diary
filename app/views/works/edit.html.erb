@@ -8,7 +8,7 @@
 
   <div class="new-image-content" >
   <div class="new-main">
-    <h2 class="new-title">NEW POST</h2>
+    <h2 class="new-title">EDIT</h2>
     <%= form_with model: @work,local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -66,7 +66,7 @@
 
     <%# 下部ボタン %>
     <div class="d-grid gap-2"> 
-      <%= f.submit "POST" ,class:"btn btn-danger" %>
+      <%= f.submit "EDIT" ,class:"btn btn-danger" %>
     </div>
     <%# /下部ボタン %>
   </div>

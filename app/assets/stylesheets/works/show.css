@@ -1,0 +1,52 @@
+/* .new-image-content {
+  width: 1000px;
+  height: 550px;
+  background-image: url(top.JPG);
+  background-size: cover;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+} */
+
+/* 作品詳細 */
+.show-items {
+  width: 700px;
+  margin: 0 auto;
+  font-family: 'Kalam', cursive;
+  font-family: 'Kalam', cursive;
+}
+.show-image img {
+  height: 400px;
+  width: 700px;
+  object-fit: contain;
+}
+.show-image{
+text-align: center;
+}
+.title-name {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 20px;
+}
+.show-weight-bold-content {
+  font-weight: bold;
+  font-size: 20px;
+}
+.show-content{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+.show-under-content {
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+/* /作品詳細 */
+
+/* ボタン */
+.show__manage{
+  margin-bottom: 5px;
+}
+
+
+/* /ボタン*/

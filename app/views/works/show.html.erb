@@ -1,0 +1,42 @@
+<%= render "shared/header" %>
+
+    <%# /作品詳細 %>
+    <div class="show-items">
+      <div class="title-name">
+        <%= @work.title %>
+      <%# /ボタン %>
+        <div class="show__manage">
+          <%= link_to "EDIT", edit_work_path(@work.id), class: "btn btn-outline-primary" %>
+          <%= link_to "DELETE",work_path(@work.id) , method: :delete, class: "btn btn-outline-danger" %>
+        </div>
+      <%# /ボタン %>
+      </div>
+      <div class="show-image">
+        <%= image_tag @work.image %>
+      </div>
+
+      <div class="show-content">
+        <div>
+          <div class="show-weight-bold-content">Day</div>
+          <%= @work.day%>
+        </div>
+        <div>
+          <div class="show-weight-bold-content">Category</div>
+          <%= Category.find(@work.category_id).name %>
+        </div>
+        <div>
+          <div class="show-weight-bold-content">Star</div>
+          <%= Star.find(@work.star_id).name %>
+        </div>
+      </div>
+
+      <div class="show-under-content">
+        <div class="show-weight-bold-content">Memo</div>
+        <%= @work.memo %>
+      </div>
+      <%# /作品詳細 %>
+
+
+    </div>
+
+<%= render "shared/footer" %>
