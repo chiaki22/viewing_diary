@@ -16,11 +16,12 @@
     <%# 画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
-        画像
+        Image
       </div>
       <div class="click-upload">
           クリックしてファイルをアップロード
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.label :image, "Choose", class: "image_input_btn" %>
+        <%= f.file_field :image, class:"item-image" %>
       </div>
     </div>
     <%# /画像 %>
@@ -29,34 +30,34 @@
       <div class="form">
         <div class="day">
           <div class="weight-bold-text">
-          日付
+          Day
           <span class="indispensable">必須</span>
           </div>
           <%= f.date_field :day, class: 'date-select' %>
         </div>
         <div>
           <div class="weight-bold-text">
-            カテゴリー
+            Category
             <span class="indispensable">必須</span>
           </div>
           <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "Choose"}, {class:"select-box", id:"category"}) %>
         </div>
         <div>
           <div class="weight-bold-text">
-            お気に入り度
+            Star
             <span class="indispensable">必須</span>
           </div>
           <%= f.collection_select(:star_id, Star.all, :id, :name, {include_blank: "Choose"}, {class:"select-box", id:"star"}) %> 
         </div>
       </div>
       <div class="weight-bold-text">
-        タイトル
+        Title
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"作品名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
-          メモ
+          Memo
         </div>
         <%= f.text_area :memo, class:"items-text", id:"item-info", placeholder:"感想など（1,000文字まで）" ,rows:"3" ,maxlength:"1000" %>
       </div>
@@ -64,8 +65,8 @@
     <%# /作品詳細 %>
 
     <%# 下部ボタン %>
-    <div class="post-btn-contents"> 
-      <%= f.submit "POST" ,class:"post-btn" %>
+    <div class="d-grid gap-2"> 
+      <%= f.submit "POST" ,class:"btn btn-danger" %>
     </div>
     <%# /下部ボタン %>
   </div>
