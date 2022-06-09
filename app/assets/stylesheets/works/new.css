@@ -107,13 +107,8 @@ h2 {
 .items-explain {
   margin-top: 2vh;
 }
-
-
 .select-box {
   border-radius: 8px;
-}
-
-.select-box {
   height: 30px;
   width: 100%;
   background-color: #f5f5f5;
