@@ -1,0 +1,159 @@
+.button-content {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Kalam', cursive;
+  font-family: 'Kalam', cursive;
+}
+#new-post {
+  display: none;
+}
+#search {
+  display: none;
+}
+
+/* <おすすめ投稿> */
+#new-post:checked~#new-post-content {
+  /* display: block; */
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
+}
+.new-recommendation {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+  /* display: none; */
+  text-align: left;
+  width: 700px;
+  margin: 15px auto;
+
+}
+.recommendation-items{
+  display: flex;
+  margin-bottom: 10px;
+}
+.recommendation-img-upload{
+  margin-right: 70px;
+}
+
+.recommendation-item-image {
+  display: none;
+}
+.recommendation-image_input_btn {
+  border-radius: 8px;
+  border: solid 1px black;
+  height: 30px;
+  background-color: #f5f5f5;
+  padding: 3px 35px ;
+
+}
+.recommendation-select-box {
+  border-radius: 8px;
+  height: 30px;
+  width: 310px;
+  background-color: #f5f5f5;
+  padding-left: 20px;
+}
+.new-recommendation-text{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.recommendation-items-text {
+  width: 320px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+/* </おすすめ投稿> */
+
+/* <おすすめ検索> */
+#search:checked~#search-content {
+  /* display: block; */
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
+}
+.recommendation-search {
+  /* display: none; */
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+  text-align: left;
+  width: 690px;
+  margin: 0 auto;
+}
+.recommendation-search-category {
+  margin-bottom: 10px;
+}
+.recommendation-search-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.search-title-text {
+  width: 400px;
+}
+.search-submit {
+  margin-top: 20px;
+}
+/* </おすすめ検索> */
+
+/* <一覧表示> */
+.list_wrapper{
+  font-family: 'Kalam', cursive;
+  font-family: 'Kalam', cursive;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.list {
+  display: flex;
+  width: calc((100% - 30px) / 3);
+  margin: 10px 5px;
+  border: solid 1px lightslategray;
+  border-radius: 10px;
+  transition-duration:  .4s;
+}
+.list:hover {
+  transform: scale(1.1);
+}
+.list-image-wrapper {
+  position:relative;
+}
+.list-image-wrapper img{
+  object-fit: cover;
+  height: 240px;
+  width: 150px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.list-delete a{
+  font-size: 12px;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  padding: 0 3px;
+  margin-left: 2px;
+  background-color: lightslategray
+}
+.list-delete a:hover {
+  background-color: aqua;
+  color: black;
+}
+.list-delete {
+  position:absolute; top:0px
+}
+.list-text{
+  padding-top: 10px;
+}
+.list-weight-bold-content{
+  font-weight: bold;
+  font-size: 18px;
+}
+/* </一覧表示> */

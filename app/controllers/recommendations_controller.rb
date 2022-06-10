@@ -1,17 +1,27 @@
 class RecommendationsController < ApplicationController
 
-  def index
+  def create
+    @recommendation =Recommendation.create(recommendation_params)
+    redirect_to search_recommendations_path
+  end  
+  
+  def search
     @recommendation = Recommendation.new
+    if params[:q]&.dig(:title)
+      squished_keywords = params[:q][:title].squish
+      params[:q][:title_cont_any] = squished_keywords.split(" ")
+    end
+    @q = Recommendation.ransack(params[:q])
+    @recommendations = @q.result.order("created_at DESC")
   end
 
-  def create
-    @recommendation =Recommendation.new(recommendation_params)
-    if @recommendation.save
-      redirect_to recommendations_path
-    else
-      render :new
-    end
+  def destroy
+    @recommendation = Recommendation.find(params[:id])
+    @recommendation.destroy
+    redirect_to search_recommendations_path
   end
+
+
 
   private
 

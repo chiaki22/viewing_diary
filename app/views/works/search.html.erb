@@ -38,7 +38,7 @@
     <%= link_to work.title, work_path(work.id), class: :card__title%>
     </div>
     <div class="card__summary">
-    <%= Category.find(work.category_id).name %>
+    <%= Category.find(work.category_id).name%>
     </div>
   </div>
   <% end %>

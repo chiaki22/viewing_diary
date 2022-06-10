@@ -23,7 +23,13 @@
   font-family: 'Kalam', cursive;
   font-size: 70px;
   font-weight: 300;
+  transition: 0.8s;
+
 }
+.new-post-btn:hover {
+  font-size: 75px;
+}
+
 
 .new-post-btn a{
   text-decoration: none;
