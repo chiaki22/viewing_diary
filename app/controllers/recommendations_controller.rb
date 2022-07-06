@@ -12,7 +12,7 @@ class RecommendationsController < ApplicationController
       params[:q][:title_cont_any] = squished_keywords.split(" ")
     end
     @q = Recommendation.ransack(params[:q])
-    @recommendations = @q.result.order("created_at DESC")
+    @recommendations = @q.result.order("created_at DESC").page(params[:page]).per(3)
   end
 
   def destroy

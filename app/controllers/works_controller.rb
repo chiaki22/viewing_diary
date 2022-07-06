@@ -23,7 +23,7 @@ class WorksController < ApplicationController
       params[:q][:title_cont_any] = squished_keywords.split(" ")
     end
     @q = Work.ransack(params[:q])
-    @works = @q.result.order("created_at DESC")
+    @works = @q.result.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def show

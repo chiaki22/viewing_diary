@@ -64,3 +64,12 @@
   font-size: 14px;
   margin-top: 5px;
 }
+.pagination {
+  justify-content: center;
+  font-family: 'Kalam', cursive;
+  font-family: 'Kalam', cursive;
+}
+.pagination>li>a {          
+  border: none;    
+  color: #696969;   
+}
