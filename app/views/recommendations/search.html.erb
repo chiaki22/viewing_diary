@@ -80,7 +80,7 @@
     <div class="list-image-wrapper">
       <%= image_tag recommendation.image, class:"list_img" %>
       <div class="list-delete">
-        <%= link_to "DELETE",recommendation_path(recommendation.id) , method: :delete, class: "list-delete-btn" %>
+        <%= link_to "DELETE",recommendation_path(recommendation.id) , method: :delete, class: "list-delete-btn", data: { confirm: "削除しますか？" } %>
       </div>
     </div>
 
@@ -107,7 +107,6 @@
   <%# </一覧表示> %>
 </div>
 
-
-
+<%= paginate @recommendations, theme: 'bootstrap-5' %>
 
 <%= render "shared/footer" %>
