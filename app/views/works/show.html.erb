@@ -7,7 +7,7 @@
       <%# /ボタン %>
         <div class="show__manage">
           <%= link_to "EDIT", edit_work_path(@work.id), class: "btn btn-outline-primary" %>
-          <%= link_to "DELETE",work_path(@work.id) , method: :delete, class: "btn btn-outline-danger" %>
+          <%= link_to "DELETE",work_path(@work.id) , method: :delete, class: "btn btn-outline-danger", data: { confirm: "削除しますか？" } %>
         </div>
       <%# /ボタン %>
       </div>

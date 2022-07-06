@@ -1,0 +1,112 @@
+<%= render "shared/header" %>
+<%# <div class="recommendation-new-post-btn" > %>
+<div class="button-content" >
+    <label class="btn btn-outline-danger btn-lg" for="new-post">New Post</label>
+    <input type="checkbox" id="new-post">
+    <label class="btn btn-outline-primary btn-lg" for="search">Search</label>
+    <input type="checkbox" id="search">
+
+    <%# おすすめ投稿 %>
+    <div id="new-post-content" class="new-recommendation" >
+      <%= form_with model: @recommendation,local: true do |f| %>
+        <div class="recommendation-items">
+          <div class="recommendation-img-upload">
+            <div class="weight-bold-text">Image</div>
+            <div class="recommendation-click-upload">
+              クリックしてアップロード
+              <%= f.label :image, "Choose", class: "recommendation-image_input_btn" %>
+              <%= f.file_field :image, class:"recommendation-item-image" %>
+            </div>
+          </div>
+          <div class="recommendation-category">
+            <div class="weight-bold-text">
+              Category
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "Choose"}, {class:"recommendation-select-box", id:"category"}) %>
+          </div>
+        </div>
+
+        <div class="new-recommendation-text">
+          <div class="recommendation-title">
+            <div class="weight-bold-text">
+              Title
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :title, class:"recommendation-items-text", id:"item-name", placeholder:"作品名（必須 40文字まで)", maxlength:"20" %>
+          </div>
+          <div class="recommendation-items-explain">
+            <div class="weight-bold-text">Memo</div>
+            <%= f.text_area :memo, class:"recommendation-items-text", id:"item-info", placeholder:"メモ（1,000文字まで）" ,rows:"2" ,maxlength:"30" %>
+         </div>
+       </div>
+
+       <div class="d-grid gap-2"> 
+         <%= f.submit "POST" ,class:"btn btn-danger" %>
+       </div>
+
+    </div>
+    <% end %>
+    <%# /おすすめ投稿 %>
+
+    <%# </div> %>
+    <%# <おすすめ検索> %>
+    <div id="search-content" class="recommendation-search">
+      <%= search_form_for @q, url: search_recommendations_path do |f| %>
+        <div class="recommendation-search-category">
+          <%= f.label :category_id_in, 'Category', class: "search-size" %>
+          <br>
+          <%= f.collection_check_boxes(:category_id_in, Category.all, :id, :name, {include_blank: "---"}) %>
+        </div>
+        <div class="recommendation-search-title">
+          <div class="recommendation-search-field">
+            <%= f.label :title, 'Title', class: "search-size" %>
+            <br>
+            <%= f.text_field :title, class:"search-title-text", placeholder: 'Title', value: params[:q]&.dig(:title) %>
+          </div>
+          <div class="search-submit">
+            <%= f.submit 'Search', class:"btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%# </おすすめ検索> %>
+</div>
+
+<%# <一覧表示> %>
+<div class="list_wrapper">
+  <% @recommendations.each do |recommendation| %>
+  <div class="list">
+    <div class="list-image-wrapper">
+      <%= image_tag recommendation.image, class:"list_img" %>
+      <div class="list-delete">
+        <%= link_to "DELETE",recommendation_path(recommendation.id) , method: :delete, class: "list-delete-btn", data: { confirm: "削除しますか？" } %>
+      </div>
+    </div>
+
+    <div class="list-text">
+      <div>
+        <div class="list-weight-bold-content">Title</div>
+        <%= recommendation.title %>
+      </div>
+      <div>
+        <div class="list-weight-bold-content">Category</div>
+        <%= Category.find(recommendation.category_id).name %>
+      </div>
+      <div>
+        <div class="list-weight-bold-content">Posted Date</div>
+        <%= recommendation.created_at.strftime('%Y/%m/%d')%>
+      </div>
+      <div>
+        <div class="list-weight-bold-content">Memo</div>
+        <%= recommendation.memo %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%# </一覧表示> %>
+</div>
+
+<%= paginate @recommendations, theme: 'bootstrap-5' %>
+
+<%= render "shared/footer" %>

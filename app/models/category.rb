@@ -14,6 +14,6 @@ class Category < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :works
+  has_many :works, :recommendations
   
   end

@@ -2,10 +2,14 @@
 .work-contents{
   font-family: 'Kalam', cursive;
   font-family: 'Kalam', cursive;
+  border-radius: 15px;
+  padding-top: 2px;
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  /* background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%); */
 }
 .work-contents-search {
   display: flex;
-  margin: 30px 20px 5px;
+  margin: 15px 20px 5px;
   justify-content: space-between
 }
 .search-size {
@@ -17,6 +21,7 @@
 }
 .btn-outline-secondary{
   margin-left: 80px;
+  margin-bottom: 10px;
 }
 .card__wrapper {
   display: flex;
@@ -24,7 +29,7 @@
 }
 .card {
   width: calc(100% / 5);
-  margin-bottom:30px;
+  margin-bottom: 30px;
   text-align: center;
 }
 .image__wrapper img{
@@ -46,6 +51,25 @@
   text-decoration: none;
   color: black;
 }
+.card__body {
+  margin: 0 10px;
+}
 .card__summary {
   font-size: 16px;
+}
+.card__title{
+  font-size: 17px;
+}
+.card__summary {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.pagination {
+  justify-content: center;
+  font-family: 'Kalam', cursive;
+  font-family: 'Kalam', cursive;
+}
+.pagination>li>a {          
+  border: none;    
+  color: #696969;   
 }
