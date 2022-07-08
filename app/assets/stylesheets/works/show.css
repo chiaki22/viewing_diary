@@ -1,18 +1,8 @@
-/* .new-image-content {
-  width: 1000px;
-  height: 550px;
-  background-image: url(top.JPG);
-  background-size: cover;
-  background-color:rgba(255,255,255,0.8);
-  background-blend-mode:lighten;
-} */
 
 /* 作品詳細 */
 .show-items {
   width: 700px;
   margin: 0 auto;
-  font-family: 'Kalam', cursive;
-  font-family: 'Kalam', cursive;
 }
 .show-image img {
   height: 400px;
