@@ -1,8 +1,6 @@
 .button-content {
   text-align: center;
   margin-top: 20px;
-  font-family: 'Kalam', cursive;
-  font-family: 'Kalam', cursive;
 }
 #new-post {
   display: none;
@@ -106,8 +104,6 @@
 
 /* <一覧表示> */
 .list_wrapper{
-  font-family: 'Kalam', cursive;
-  font-family: 'Kalam', cursive;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 10px;

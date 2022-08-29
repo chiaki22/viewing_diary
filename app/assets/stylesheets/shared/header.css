@@ -2,14 +2,14 @@
 .layout-wrapper{
   width: 1000px;
   margin: 0 auto;
+  font-family: 'Kalam', cursive;
+  font-family: 'Kalam', cursive;
 }
 
 /******************************************************** 
 　ヘッダー
 ********************************************************/
 .header {
-  font-family: 'Kalam', cursive;
-  font-family: 'Kalam', cursive;
   width: 100%;
   text-align: center;
 }
