@@ -58,3 +58,4 @@ gem 'image_processing', '~> 1.2'
 gem 'ransack'
 gem 'kaminari'
 gem 'bootstrap5-kaminari-views'
+gem "aws-sdk-s3", require: false
