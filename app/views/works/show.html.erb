@@ -12,7 +12,11 @@
       <%# /ボタン %>
       </div>
       <div class="show-image">
-        <%= image_tag @work.image %>
+        <% if @work.image.present? %>
+          <%= image_tag @work.image %>
+        <% else %>
+          <%= image_tag 'noimage.jpg' %>
+        <% end %>
       </div>
 
       <div class="show-content">

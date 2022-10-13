@@ -78,7 +78,11 @@
   <% @recommendations.each do |recommendation| %>
   <div class="list">
     <div class="list-image-wrapper">
-      <%= image_tag recommendation.image, class:"list_img" %>
+      <% if recommendation.image.present? %>
+        <%= image_tag recommendation.image, class:"list_img" %>
+      <% else %>
+        <%= image_tag 'noimage2.jpg', class:"list_img" %>
+      <% end %>
       <div class="list-delete">
         <%= link_to "DELETE",recommendation_path(recommendation.id) , method: :delete, class: "list-delete-btn", data: { confirm: "削除しますか？" } %>
       </div>
